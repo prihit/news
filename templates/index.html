@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'alerts.html' %}
+<button><a href="/news/new">Upload a news article</a></button>
+{% if news %}
+    <h1>List of all news articles</h1>
+    {% for ne in news %}
+        <h3>{{ ne.title }}</h3>
+        <a href="{% url 'news' ne.id %}"> More Details</a>
+    {% endfor %}
+{% else %}
+<p>No listings available</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+</head>
+<body style="margin: 0%;">
+    <nav style="background-color: aquamarine;">
+        <ul>{% if user.is_authenticated %}
+            <li class="drop-down"><a href="#">{{ user.email }}</a>
+              <ul>
+                <li><a href="/logout">Log Out</a></li>
+              </ul>
+            </li>
+          {% else %}
+            <li><a href="/register">Register</a></li>
+            <li><a href="/login">Log In</a></li>  
+          {% endif %}
+          <li><a href="">Home Page</a></li>
+  </ul>
+    </nav>
+    {% block content %} {% endblock %}
+</body>
+</html>

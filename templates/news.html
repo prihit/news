@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>Title:  {{news.title }}</h3>
+<p>Description:  {{ news.description }}</p>
+<p>Location:  {{ news.location }}</p>
+<p>Author:  {{ news.author }}</p>
+<p>Time of Upload:  {{ news.date_time }}</p>
+
+<button><a href="{% url 'edit' news.id %}">Edit this article</a></button>
+<button><a href="{% url 'delete' news.id %}">Delete this article</a></button>
+
+
+{% endblock %}

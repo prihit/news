@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+<input type="text" name="title" id="title" value="{{ news.title }}"><br>
+<input type="text" name="location" id="location" value="{{ news.location }}"><br>
+<input type="text" name="description" id="description" value="{{ news.description }}"><br>
+<input type="submit" value="submit">
+</form>
+
+
+
+{% endblock %}

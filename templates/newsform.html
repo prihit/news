@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/news/new" method="POST">
+    {% csrf_token %}
+<input type="text" name="title" id="title" placeholder="Title"><br>
+<input type="text" name="location" id="location" placeholder="location"><br>
+<input type="text" name="description" id="description" placeholder="description"><br>
+<input type="submit" value="submit">
+</form>
+
+{% endblock %}
